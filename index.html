@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHISHTI | Demo Store</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SHISHTI | Online Store</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
 <body data-page="store">
-  <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-mark">S</span><span>SHISHTI</span></a>
-    <nav><a class="active" href="index.html">Store</a><a href="admin.html">Admin Demo</a></nav>
-    <button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">SHISHTI ONLINE</p>
-        <h1>Your store.<br><span>Now online.</span></h1>
-        <p class="hero-copy">A realistic demo of the future SHISHTI ordering experience. Browse products, add to cart and place an order without WhatsApp.</p>
-        <a class="primary-btn" href="#products">Shop now</a>
-      </div>
-      <div class="hero-card"><div class="hero-card-inner"><span>SHISHTI</span><strong>ONLINE<br>STORE</strong><small>DEMO EXPERIENCE</small></div></div>
-    </section>
-
-    <section class="section" id="products">
-      <div class="section-head"><div><p class="eyebrow">PRODUCTS</p><h2>Featured products</h2></div><div class="search-wrap"><input id="search" placeholder="Search products..."></div></div>
-      <div class="chips" id="categories"></div>
-      <div class="product-grid" id="productGrid"></div>
-    </section>
-  </main>
-
-  <aside class="drawer" id="cartDrawer">
-    <div class="drawer-head"><h2>Your cart</h2><button class="icon-btn" id="closeCart">×</button></div>
-    <div id="cartItems"></div>
-    <div class="cart-footer"><div><span>Total</span><strong id="cartTotal">EGP 0</strong></div><button class="primary-btn full" id="checkoutBtn">Checkout</button></div>
-  </aside>
-  <div class="overlay" id="overlay"></div>
-
-  <div class="modal" id="checkoutModal">
-    <div class="modal-box">
-      <button class="modal-close" data-close="checkoutModal">×</button>
-      <p class="eyebrow">CHECKOUT</p><h2>Place your order</h2>
-      <form id="checkoutForm">
-        <label>Full name<input required name="name" placeholder="Your name"></label>
-        <label>Phone number<input required name="phone" placeholder="01xxxxxxxxx"></label>
-        <label>Delivery address<textarea required name="address" placeholder="Building, street, area"></textarea></label>
-        <label>Payment method<select name="payment"><option>Cash on delivery</option><option>Online payment (demo)</option></select></label>
-        <button class="primary-btn full" type="submit">Confirm order</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">S</span><span>SHISHTI</span></a><nav class="store-nav"><a class="active" href="#products">Shop</a><a href="#about">About</a></nav><div class="top-actions"><button class="ghost-btn" id="accountBtn">Account</button><button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button></div></header>
+<main>
+<section class="hero"><div class="hero-copy-block"><span class="eyebrow">SHISHTI ONLINE</span><h1>Everything you want.<br><span>One place.</span></h1><p>Discover the SHISHTI collection, add what you need to your cart and place your order in a few simple steps.</p><div class="hero-actions"><a class="primary-btn" href="#products">Explore products</a><button class="outline-btn" id="heroAccount">Create account</button></div><div class="hero-meta"><span>Fast ordering</span><span>Customer account</span><span>Live stock</span></div></div><div class="hero-visual"><div class="hero-glow"></div><div class="hero-card"><span>SHISHTI</span><strong>ONLINE<br>STORE</strong><small>EST. 2026 · DEMO</small></div></div></section>
+<section class="section" id="products"><div class="section-head"><div><span class="eyebrow">COLLECTION</span><h2>Shop products</h2></div><div class="search-box"><span>⌕</span><input id="search" placeholder="Search products..."></div></div><div class="chips" id="categories"></div><div class="product-grid" id="productGrid"></div></section>
+<section class="account-strip" id="about"><div><span class="eyebrow">YOUR SHISHTI ACCOUNT</span><h2>Order faster next time.</h2><p>Save your details, view your demo orders and keep your shopping experience in one place.</p></div><button class="primary-btn" id="stripAccount">Open account</button></section>
+</main>
+<aside class="drawer" id="cartDrawer"><div class="drawer-head"><div><span class="eyebrow">YOUR BAG</span><h2>Shopping cart</h2></div><button class="icon-btn" id="closeCart">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div><span>Total</span><strong id="cartTotal">EGP 0</strong></div><button class="primary-btn full" id="checkoutBtn">Continue to checkout</button></div></aside><div class="overlay" id="overlay"></div>
+<div class="modal" id="accountModal"><div class="modal-box account-modal"><button class="modal-close" data-close="accountModal">×</button><div id="authView"><span class="eyebrow">SHISHTI ACCOUNT</span><h2 id="authTitle">Welcome back</h2><p class="muted" id="authSubtitle">Sign in to save your details and view your orders.</p><div class="auth-tabs"><button class="auth-tab active" id="loginTab">Sign in</button><button class="auth-tab" id="registerTab">Create account</button></div><form id="authForm"><label id="nameField" class="hidden">Full name<input name="name" autocomplete="name"></label><label>Email<input required type="email" name="email" autocomplete="email" placeholder="you@example.com"></label><label>Password<input required type="password" name="password" autocomplete="current-password" placeholder="••••••••"></label><button class="primary-btn full" type="submit" id="authSubmit">Sign in</button></form><p class="demo-note">Demo only: account data is stored in this browser's localStorage.</p></div><div id="profileView" class="hidden"><span class="eyebrow">MY ACCOUNT</span><h2 id="profileName">Account</h2><p class="muted" id="profileEmail"></p><div class="profile-actions"><button class="secondary-btn full" id="ordersBtn">View my orders</button><button class="danger-btn full" id="logoutBtn">Sign out</button></div><div id="accountOrders" class="account-orders"></div></div></div></div>
+<div class="modal" id="checkoutModal"><div class="modal-box"><button class="modal-close" data-close="checkoutModal">×</button><span class="eyebrow">CHECKOUT</span><h2>Complete your order</h2><form id="checkoutForm"><label>Full name<input required name="name" id="checkoutName" autocomplete="name"></label><label>Phone number<input required name="phone" placeholder="01xxxxxxxxx" autocomplete="tel"></label><label>Delivery address<textarea required name="address" placeholder="Building, street, area"></textarea></label><label>Payment method<select name="payment"><option>Cash on delivery</option><option>Online payment (demo)</option></select></label><button class="primary-btn full" type="submit">Place order</button></form></div></div>
+<div class="toast" id="toast"></div><script src="app.js"></script></body></html>
