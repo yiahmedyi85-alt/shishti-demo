@@ -86,7 +86,7 @@ let scannerStream=null,scannerTimer=null;
 async function startScanner(){
  try{
   if(!("BarcodeDetector" in window)){ $("#lookupStatus").textContent="Live barcode scanning is not supported by this browser. Use the barcode field below.";return}
-  const detector=new BarcodeDetector({formats:["ean_13","ean_8","upc_a","upc_e","code_128","code_39","itf"]});
+  const detector=new BarcodeDetector({formats:["qr_code","ean_13","ean_8","upc_a","upc_e","code_128","code_39","itf"]});
   scannerStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}}});
   const v=$("#scannerVideo");v.srcObject=scannerStream;await v.play();
   scannerTimer=setInterval(async()=>{try{const codes=await detector.detect(v);if(codes.length&&codes[0].rawValue){$("#barcodeInput").value=codes[0].rawValue;lookupBarcode(codes[0].rawValue)}}catch{}},500);
