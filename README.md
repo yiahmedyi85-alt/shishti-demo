@@ -1,24 +1,28 @@
 # SHISHTI Demo
 
-First visual/functional prototype for the SHISHTI online store.
+Professional two-page e-commerce prototype for SHISHTI.
 
-## Demo pages
-- `index.html`: customer-facing store
-- `admin.html`: store management dashboard
+## Pages
+- index.html - customer storefront
+- admin.html - separate store administration dashboard
 
-## Barcode flow
-1. Admin opens **Add product by barcode**.
-2. The browser attempts to scan a product barcode using the camera.
-3. The barcode is sent to the public Open Food Facts API for product information.
-4. The returned name/category/image are shown in the product form.
-5. The store owner enters their own **price** and **stock quantity**.
-6. Saving the product adds it to the demo inventory.
+Both pages are intentionally separated but share the same browser localStorage.
 
-A manual barcode field is included as a fallback.
+## Shared localStorage
+- shishti_products - inventory shared between Admin and Store
+- shishti_orders - customer orders shared between pages
+- shishti_users - demo customer accounts
+- shishti_current_user - signed-in customer
+- shishti_cart - current cart
 
-## Important prototype note
-This is a front-end demo. Data is stored in the browser's localStorage and the public product lookup is not a production backend.
+## Demo flow
+1. Create a customer account on the Store page.
+2. Add products and place an order.
+3. Open admin.html separately. The order appears there.
+4. Add or scan a product in Admin, set price and stock, and save it.
+5. The product appears on the Store page automatically because both pages use the same localStorage data.
 
-For the real SHISHTI system, the next version should use a secure backend/database, authenticated admin accounts, real order storage, image storage, stock locking, and a proper payment gateway if online payments are required.
+## Important
+This is a browser-only demo. Passwords, inventory and orders are not secure and are not suitable for production. A real launch should move authentication, inventory, orders and payments to a secure backend/database.
 
-The barcode lookup will not know every product sold by every shop. For products missing from the public database, the admin can add the product manually.
+Product scanning supports QR/barcode formats where the browser provides BarcodeDetector and uses Open Food Facts for public product information, with manual fallback.
