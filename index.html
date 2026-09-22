@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHISHTI | Demo Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="store">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span>SHISHTI</span></a>
+    <nav><a class="active" href="index.html">Store</a><a href="admin.html">Admin Demo</a></nav>
+    <button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SHISHTI ONLINE</p>
+        <h1>Your store.<br><span>Now online.</span></h1>
+        <p class="hero-copy">A realistic demo of the future SHISHTI ordering experience. Browse products, add to cart and place an order without WhatsApp.</p>
+        <a class="primary-btn" href="#products">Shop now</a>
+      </div>
+      <div class="hero-card"><div class="hero-card-inner"><span>SHISHTI</span><strong>ONLINE<br>STORE</strong><small>DEMO EXPERIENCE</small></div></div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head"><div><p class="eyebrow">PRODUCTS</p><h2>Featured products</h2></div><div class="search-wrap"><input id="search" placeholder="Search products..."></div></div>
+      <div class="chips" id="categories"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-head"><h2>Your cart</h2><button class="icon-btn" id="closeCart">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-footer"><div><span>Total</span><strong id="cartTotal">EGP 0</strong></div><button class="primary-btn full" id="checkoutBtn">Checkout</button></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-box">
+      <button class="modal-close" data-close="checkoutModal">×</button>
+      <p class="eyebrow">CHECKOUT</p><h2>Place your order</h2>
+      <form id="checkoutForm">
+        <label>Full name<input required name="name" placeholder="Your name"></label>
+        <label>Phone number<input required name="phone" placeholder="01xxxxxxxxx"></label>
+        <label>Delivery address<textarea required name="address" placeholder="Building, street, area"></textarea></label>
+        <label>Payment method<select name="payment"><option>Cash on delivery</option><option>Online payment (demo)</option></select></label>
+        <button class="primary-btn full" type="submit">Confirm order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
